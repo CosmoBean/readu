@@ -31,12 +31,10 @@ function App() {
   //deleteBookFunction
   const deleteBookById = async(bookId) => {
     const response = await axios.delete(`http://localhost:3001/books/${bookId}`);
-    if (response.status === 200){
     const updatedBooks1 = books.filter((book) =>{
       return (book.id !== bookId)
     });
     setBooks(updatedBooks1);
-  }
   };
 
   //createBook function
